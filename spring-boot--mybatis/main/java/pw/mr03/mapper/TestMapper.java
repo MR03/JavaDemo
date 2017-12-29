@@ -1,6 +1,6 @@
-package com.example.demo.mapper;
+package pw.mr03.mapper;
 
-import com.example.demo.entity.Test;
+import pw.mr03.entity.Test;
 
 import java.util.List;
 

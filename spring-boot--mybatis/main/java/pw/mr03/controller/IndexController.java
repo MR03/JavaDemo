@@ -1,10 +1,10 @@
-package com.example.demo.controller;
+package pw.mr03.controller;
 
-import com.example.demo.entity.Test;
-import com.example.demo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pw.mr03.entity.Test;
+import pw.mr03.service.TestService;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public List<Test> index() {
-        List<Test> info = testService.getInfo(1);
+        List<Test> info = testService.getById(4);
         return info;
     }
 }

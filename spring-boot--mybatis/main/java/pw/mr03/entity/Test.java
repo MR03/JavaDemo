@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package pw.mr03.entity;
 
 /**
  * Created by Administrator on 2017/12/29.
