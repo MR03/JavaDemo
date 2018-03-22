@@ -1,10 +1,10 @@
-package pw.mr03.controller;
+package pw.mr03.oktalia.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pw.mr03.entity.Test;
-import pw.mr03.service.TestService;
+import pw.mr03.oktalia.entity.Test;
+import pw.mr03.oktalia.service.TestService;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public List<Test> index() {
-        List<Test> info = testService.getById(4);
+        List<Test> info = testService.getById(2);
         return info;
     }
 }

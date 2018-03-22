@@ -1,7 +1,8 @@
-package pw.mr03.mapper;
+package pw.mr03.oktalia.mapper;
 
-import pw.mr03.entity.Test;
 
+
+import pw.mr03.oktalia.entity.Test;
 import java.util.List;
 
 /**

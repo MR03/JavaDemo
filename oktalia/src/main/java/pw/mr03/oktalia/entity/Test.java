@@ -1,4 +1,4 @@
-package pw.mr03.entity;
+package pw.mr03.oktalia.entity;
 
 /**
  * Created by Administrator on 2017/12/29.
