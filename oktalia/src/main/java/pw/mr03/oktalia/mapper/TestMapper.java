@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface TestMapper {
 
-    List<Test> getById(final int id);
+    List<Test> getById(int id);
 }

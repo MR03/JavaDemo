@@ -1,9 +1,13 @@
 package pw.mr03.oktalia.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 /**
  * Created by Administrator on 2017/12/29.
  */
 public class Admin {
+    public interface SimpleView {};
+
     private int id;
 
     private String realname;
@@ -26,6 +30,7 @@ public class Admin {
         this.realname = realname;
     }
 
+    @JsonView(SimpleView.class)
     public String getPwd() {
         return pwd;
     }

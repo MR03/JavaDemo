@@ -1,7 +1,12 @@
 package pw.mr03.oktalia.logic.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import pw.mr03.oktalia.api.Api;
+import pw.mr03.oktalia.api.ApiFactory;
+import pw.mr03.oktalia.entity.Admin;
 import pw.mr03.oktalia.request.SignInReq;
 import pw.mr03.oktalia.logic.service.AdminService;
 
@@ -14,14 +19,21 @@ public class SignController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value="/api/v1/sign/in", method=RequestMethod.POST)
-    public String signIn(@RequestBody SignInReq signInReq) {
-        if (signInReq.getRealname().equals("") || signInReq.getPwd().equals("")) {
-            return "参数不能为空";
-        } else {
 
+    @RequestMapping(value="/oktalia/v1/sign/in", method=RequestMethod.POST)
+    // @JsonView(Admin.SimpleView.class)
+    public Api signIn(@RequestBody @Validated SignInReq req) {
+        Admin admin = adminService.getAdmin(req.getMobile());
+        if (admin == null) {
+            return ApiFactory.fail("该号码没有注册");
+        } else {
+            // 登录密码是否正确
+            boolean login = adminService.login(req, admin);
+            if (login) {
+                return ApiFactory.ok(admin);
+            } else {
+                return ApiFactory.fail("登录密码错误");
+            }
         }
-        System.out.println(signInReq.getRealname());
-        return "sign in";
     }
 }

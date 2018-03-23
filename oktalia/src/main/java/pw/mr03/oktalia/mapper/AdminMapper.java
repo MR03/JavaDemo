@@ -1,5 +1,6 @@
 package pw.mr03.oktalia.mapper;
 
+import pw.mr03.oktalia.entity.Admin;
 import pw.mr03.oktalia.request.RegisterAdminReq;
 
 /**
@@ -7,6 +8,7 @@ import pw.mr03.oktalia.request.RegisterAdminReq;
  */
 public interface AdminMapper {
 
-    Integer addAdmin(RegisterAdminReq req);
+    int addAdmin(RegisterAdminReq req);
 
+    Admin getAdmin(String mobile);
 }

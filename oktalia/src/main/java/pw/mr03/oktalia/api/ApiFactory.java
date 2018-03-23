@@ -10,7 +10,7 @@ public class ApiFactory {
     /**
      * 成功返回,没有data,msg相同
      */
-    public static final Api set() {
+    public static final Api ok() {
         api.setCode(Code.SUCCESS.getCode());
         api.setMsg(Code.SUCCESS.getMsg());
         api.setData("");
@@ -20,7 +20,7 @@ public class ApiFactory {
     /**
      * 成功返回,有data,msg相同
      */
-    public static final Api set(Object data) {
+    public static final Api ok(Object data) {
         api.setCode(Code.SUCCESS.getCode());
         api.setMsg(Code.SUCCESS.getMsg());
         api.setData(data);
@@ -28,9 +28,19 @@ public class ApiFactory {
     }
 
     /**
+     * 失败返回,没有data,msg相同
+     */
+    public static final Api fail() {
+        api.setCode(Code.FAILURE.getCode());
+        api.setMsg(Code.FAILURE.getMsg());
+        api.setData("");
+        return api;
+    }
+
+    /**
      * 失败返回,没有data,msg不同
      */
-    public static final Api set(String msg) {
+    public static final Api fail(String msg) {
         api.setCode(Code.FAILURE.getCode());
         api.setMsg(msg);
         api.setData("");

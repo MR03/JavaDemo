@@ -1,20 +1,22 @@
 package pw.mr03.oktalia.request;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * Created by Administrator on 2017/12/29.
  */
 public class SignInReq {
-
-    private String realname;
-
+    @NotBlank(message = "号码不能为空")
+    private String mobile;
+    @NotBlank(message = "密码不能为空")
     private String pwd;
 
-    public String getRealname() {
-        return realname;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getPwd() {
