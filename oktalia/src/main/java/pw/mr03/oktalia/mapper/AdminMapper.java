@@ -10,5 +10,5 @@ public interface AdminMapper {
 
     List<Admin> getById(Integer id);
 
-    List<Admin> getByTest(Integer id);
+    List<Admin> getByTest(String mobile);
 }

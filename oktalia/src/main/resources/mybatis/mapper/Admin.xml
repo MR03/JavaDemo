@@ -13,10 +13,10 @@
         from ok_admin
         where id = #{id}
     </select>
-    <select id="getByTest" resultMap="AdminResultMap" parameterType="java.lang.Integer">
+    <insert id="getByTest" resultMap="AdminResultMap" parameterType="java.lang.Integer">
         select
         password
         from ok_admin
         where id = #{id}
-    </select>
+    </insert>
 </mapper>

@@ -16,7 +16,12 @@ public class SignController {
 
     @RequestMapping(value="/api/v1/sign/in", method=RequestMethod.POST)
     public String signIn(@RequestBody SignInReq signInReq) {
-        System.out.println(signInReq);
+        if (signInReq.getRealname().equals("") || signInReq.getPassword().equals("")) {
+            return "参数不能为空";
+        } else {
+
+        }
+        System.out.println(signInReq.getRealname());
         return "sign in";
     }
 }

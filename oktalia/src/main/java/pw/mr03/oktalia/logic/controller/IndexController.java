@@ -18,8 +18,8 @@ public class IndexController {
     private AdminService adminService;
 
     @RequestMapping("/")
-    public List<Admin> index() {
-        List<Admin> info = adminService.getByTest(1);
-        return info;
+    public String index() {
+//        List<Admin> info = adminService.getByTest(1);
+        return "ok";
     }
 }
