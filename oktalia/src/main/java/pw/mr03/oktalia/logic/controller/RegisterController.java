@@ -26,11 +26,6 @@ public class RegisterController {
      */
     @RequestMapping(value="/oktalia/v1/register/admin", method=RequestMethod.POST)
     public Api signIn(@RequestBody @Validated RegisterAdminReq req) {
-//        if(result.hasErrors())
-//        {
-//            String msg = result.getFieldError().getDefaultMessage();
-//            return ApiFactory.set(msg);
-//        }
         adminService.addAdmin(req);
         return ApiFactory.set();
     }

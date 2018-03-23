@@ -19,7 +19,6 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-        List<Admin> info = adminService.getById(1);
         return "ok";
     }
 }

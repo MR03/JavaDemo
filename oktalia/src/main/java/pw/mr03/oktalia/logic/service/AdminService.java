@@ -20,11 +20,6 @@ public class AdminService implements AdminMapper {
     @Autowired
     private AdminMapper adminMapper;
 
-    @Override
-    public List<Admin> getById(Integer id) {
-        return adminMapper.getById(id);
-    }
-
     /**
      * 添加一个新管理员
      */

@@ -18,7 +18,7 @@ public class TestService implements TestMapper {
     private TestMapper testMapper;
 
     @Override
-    public List<Test> getById(Integer id) {
+    public List<Test> getById(int id) {
         return testMapper.getById(id);
     }
 }

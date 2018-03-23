@@ -14,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value=MethodArgumentNotValidException.class)
-    public void MethodArgumentNotValidHandler(HttpServletRequest request,
+    public String MethodArgumentNotValidHandler(HttpServletRequest request,
                                                 MethodArgumentNotValidException exception) throws Exception
     {
         //按需重新封装需要返回的错误信息
-        System.out.println("异常处理");
+        System.out.println(exception.getBindingResult().getFieldError().getDefaultMessage());
+        return "Sdfsdf";
+
     }
 }
