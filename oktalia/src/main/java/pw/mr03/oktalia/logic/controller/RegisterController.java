@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pw.mr03.oktalia.api.Api;
+import pw.mr03.oktalia.api.ApiFactory;
 import pw.mr03.oktalia.request.RegisterAdminReq;
 import pw.mr03.oktalia.logic.service.AdminService;
 
@@ -21,11 +23,11 @@ public class RegisterController {
      * 管理员注册
      */
     @RequestMapping(value="/api/v1/register/admin", method=RequestMethod.POST)
-    public String signIn(@RequestBody RegisterAdminReq req) {
+    public Api signIn(@RequestBody RegisterAdminReq req) {
         if (req.getRealname().equals("") || req.getPwd().equals("") || req.getMobile().equals("")) {
-            return "参数不能为空";
+            return ApiFactory.getApi("0001", "参数不能为空");
         }
         adminService.addAdmin(req);
-        return "sign in";
+        return ApiFactory.getApi("注册成功");
     }
 }
