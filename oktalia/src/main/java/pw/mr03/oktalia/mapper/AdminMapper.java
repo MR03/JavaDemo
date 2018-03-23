@@ -12,5 +12,5 @@ public interface AdminMapper {
 
     List<Admin> getById(Integer id);
 
-    List<Admin> addAdmin(RegisterAdminReq req);
+    Integer addAdmin(RegisterAdminReq req);
 }

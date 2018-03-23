@@ -27,8 +27,8 @@ public class AdminService implements AdminMapper {
      * 添加一个新管理员
      */
     @Override
-    public List<Admin> addAdmin(RegisterAdminReq req) {
-        adminMapper.addAdmin(req);
-        return null;
+    public Integer addAdmin(RegisterAdminReq req) {
+        Integer admin = adminMapper.addAdmin(req);
+        return admin;
     }
 }

@@ -25,8 +25,7 @@ public class RegisterController {
         if (req.getRealname().equals("") || req.getPwd().equals("") || req.getMobile().equals("")) {
             return "参数不能为空";
         }
-
-//        adminService.addAdmin("34");
+        adminService.addAdmin(req);
         return "sign in";
     }
 }

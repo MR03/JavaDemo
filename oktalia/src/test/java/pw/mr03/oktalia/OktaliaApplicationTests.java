@@ -18,10 +18,11 @@ public class OktaliaApplicationTests {
 	@Test
 	public void contextLoads() {
 		RegisterAdminReq req = new RegisterAdminReq();
-		req.setMobile("34");
+		req.setMobile("3422222222222222");
 		req.setPwd("df");
 		req.setRealname("sdf");
-		adminService.addAdmin(req);
+		Integer admin = adminService.addAdmin(req);
+		System.out.println(admin);
 	}
 
 }
