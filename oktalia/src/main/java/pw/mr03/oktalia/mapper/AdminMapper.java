@@ -8,5 +8,7 @@ import java.util.List;
  */
 public interface AdminMapper {
 
-    List<Admin> getById(final Integer id);
+    List<Admin> getById(Integer id);
+
+    List<Admin> getByTest(Integer id);
 }

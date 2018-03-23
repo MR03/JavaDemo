@@ -2,17 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="pw.mr03.oktalia.mapper.AdminMapper">
-    <resultMap id="BaseResultMap" type="pw.mr03.oktalia.entity.Admin">
+    <resultMap id="AdminResultMap" type="pw.mr03.oktalia.entity.Admin">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="realname" property="realname" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
     </resultMap>
-    <sql id="Base_Column_List">
-        *
-    </sql>
-    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="getById" resultMap="AdminResultMap" parameterType="java.lang.Integer">
         select
-        <include refid="Base_Column_List" />
+        realname
+        from ok_admin
+        where id = #{id}
+    </select>
+    <select id="getByTest" resultMap="AdminResultMap" parameterType="java.lang.Integer">
+        select
+        password
         from ok_admin
         where id = #{id}
     </select>
