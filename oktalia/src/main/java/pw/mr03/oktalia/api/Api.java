@@ -8,9 +8,7 @@ public class Api {
     private String msg;
     private Object data;
 
-    public String getCode() {
-        return code;
-    }
+    public String getCode() { return code; }
 
     public void setCode(String code) {
         this.code = code;

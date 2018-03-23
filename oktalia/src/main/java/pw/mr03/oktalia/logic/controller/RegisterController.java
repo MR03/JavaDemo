@@ -28,9 +28,10 @@ public class RegisterController {
     public Api signIn(@RequestBody @Validated RegisterAdminReq req, BindingResult result) {
         if(result.hasErrors())
         {
-            System.out.println(result.getFieldError().getDefaultMessage());
+            String msg = result.getFieldError().getDefaultMessage();
+            return ApiFactory.set(msg);
         }
         adminService.addAdmin(req);
-        return ApiFactory.getApi("注册成功");
+        return ApiFactory.set();
     }
 }

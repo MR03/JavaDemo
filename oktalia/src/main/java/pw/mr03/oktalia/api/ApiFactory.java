@@ -1,24 +1,49 @@
 package pw.mr03.oktalia.api;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 /**
  * Created by Administrator on 2018/3/23.
  */
 public class ApiFactory {
-    public static final Api getApi(String msg) {
-        Api api = new Api();
-        api.setCode("0000");
+
+    private static final Api api = new Api();
+
+    /**
+     * 成功返回,没有data,msg相同
+     */
+    public static final Api set() {
+        api.setCode(Code.SUCCESS.getCode());
+        api.setMsg(Code.SUCCESS.getMsg());
+        api.setData("");
+        return api;
+    }
+
+    /**
+     * 成功返回,有data,msg相同
+     */
+    public static final Api set(Object data) {
+        api.setCode(Code.SUCCESS.getCode());
+        api.setMsg(Code.SUCCESS.getMsg());
+        api.setData(data);
+        return api;
+    }
+
+    /**
+     * 失败返回,没有data,msg不同
+     */
+    public static final Api set(String msg) {
+        api.setCode(Code.FAILURE.getCode());
         api.setMsg(msg);
         api.setData("");
         return api;
     }
 
-    public static final Api getApi(String code, String msg) {
-        Api api = new Api();
-        api.setCode(code);
-        api.setMsg(msg);
-        api.setData("");
+    /**
+     * 设置
+     */
+    public static final Api set(Code code, Object data) {
+        api.setCode(code.getCode());
+        api.setMsg(code.getMsg());
+        api.setData(data);
         return api;
     }
 }
