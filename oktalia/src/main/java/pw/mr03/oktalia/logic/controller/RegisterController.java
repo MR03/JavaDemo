@@ -1,6 +1,8 @@
 package pw.mr03.oktalia.logic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,12 +22,13 @@ public class RegisterController {
     private AdminService adminService;
 
     /**
-     * 管理员注册
+     * 注册-管理员
      */
-    @RequestMapping(value="/api/v1/register/admin", method=RequestMethod.POST)
-    public Api signIn(@RequestBody RegisterAdminReq req) {
-        if (req.getRealname().equals("") || req.getPwd().equals("") || req.getMobile().equals("")) {
-            return ApiFactory.getApi("0001", "参数不能为空");
+    @RequestMapping(value="/oktalia/v1/register/admin", method=RequestMethod.POST)
+    public Api signIn(@RequestBody @Validated RegisterAdminReq req, BindingResult result) {
+        if(result.hasErrors())
+        {
+            System.out.println(result.getFieldError().getDefaultMessage());
         }
         adminService.addAdmin(req);
         return ApiFactory.getApi("注册成功");
