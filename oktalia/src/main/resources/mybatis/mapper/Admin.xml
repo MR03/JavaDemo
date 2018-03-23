@@ -5,7 +5,7 @@
     <resultMap id="AdminResultMap" type="pw.mr03.oktalia.entity.Admin">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="realname" property="realname" jdbcType="VARCHAR" />
-        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
     </resultMap>
     <select id="getById" resultMap="AdminResultMap" parameterType="java.lang.Integer">
         select
@@ -13,10 +13,12 @@
         from ok_admin
         where id = #{id}
     </select>
-    <insert id="getByTest" resultMap="AdminResultMap" parameterType="java.lang.Integer">
-        select
-        password
-        from ok_admin
-        where id = #{id}
+    <insert id="addAdmin" parameterType="pw.mr03.oktalia.request.RegisterAdminReq" >
+        insert into
+        ok_admin(realname,pwd,mobile)
+        values (
+        #{realname,jdbcType=CHAR},
+        #{pwd,jdbcType=CHAR},
+        #{mobile,jdbcType=CHAR})
     </insert>
 </mapper>

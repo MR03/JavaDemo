@@ -2,7 +2,7 @@ package pw.mr03.oktalia.logic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pw.mr03.oktalia.logic.request.SignInReq;
+import pw.mr03.oktalia.request.SignInReq;
 import pw.mr03.oktalia.logic.service.AdminService;
 
 /**
@@ -16,7 +16,7 @@ public class SignController {
 
     @RequestMapping(value="/api/v1/sign/in", method=RequestMethod.POST)
     public String signIn(@RequestBody SignInReq signInReq) {
-        if (signInReq.getRealname().equals("") || signInReq.getPassword().equals("")) {
+        if (signInReq.getRealname().equals("") || signInReq.getPwd().equals("")) {
             return "参数不能为空";
         } else {
 

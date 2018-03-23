@@ -1,4 +1,4 @@
-package pw.mr03.oktalia.logic.request;
+package pw.mr03.oktalia.request;
 
 /**
  * Created by Administrator on 2017/12/29.
@@ -7,8 +7,7 @@ public class SignInReq {
 
     private String realname;
 
-    private String password;
-
+    private String pwd;
 
     public String getRealname() {
         return realname;
@@ -18,11 +17,11 @@ public class SignInReq {
         this.realname = realname;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 }

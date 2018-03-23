@@ -3,7 +3,7 @@ package pw.mr03.oktalia.logic.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pw.mr03.oktalia.entity.Admin;
-import pw.mr03.oktalia.logic.request.RegisterAdminReq;
+import pw.mr03.oktalia.request.RegisterAdminReq;
 import pw.mr03.oktalia.mapper.AdminMapper;
 
 import java.util.List;
@@ -23,15 +23,12 @@ public class AdminService implements AdminMapper {
         return adminMapper.getById(id);
     }
 
-    @Override
-    public List<Admin> getByTest(String mobile) {
-        return null;
-    }
-
     /**
      * 添加一个新管理员
      */
-    public boolean addAdmin(RegisterAdminReq req) {
-        return false;
+    @Override
+    public List<Admin> addAdmin(RegisterAdminReq req) {
+        adminMapper.addAdmin(req);
+        return null;
     }
 }

@@ -19,7 +19,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-//        List<Admin> info = adminService.getByTest(1);
+        List<Admin> info = adminService.getById(1);
         return "ok";
     }
 }
