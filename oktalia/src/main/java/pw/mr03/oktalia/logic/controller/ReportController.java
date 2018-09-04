@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import pw.mr03.oktalia.api.Api;
 import pw.mr03.oktalia.api.ApiFactory;
-import pw.mr03.oktalia.request.RegisterAdminReq;
 import pw.mr03.oktalia.logic.service.AdminService;
+import pw.mr03.oktalia.request.RegisterAdminReq;
 
 /**
  * Created by Administrator on 2017/12/22.
  */
 @RestController
-public class RegisterController {
+public class ReportController {
 
     @Autowired
     private AdminService adminService;
@@ -23,13 +23,12 @@ public class RegisterController {
     /**
      * 注册-管理员
      */
-    @RequestMapping(value="/oktalia/v1/register/admin", method=RequestMethod.POST)
-    public Api signIn(@RequestBody @Validated RegisterAdminReq req) {
+    @RequestMapping(value="/oktalia/v1/report/accept", method=RequestMethod.POST)
+    public Api reportAccept(@RequestBody @Validated RegisterAdminReq req) {
         int flag = adminService.addAdmin(req);
         if (flag == 1) {
             return ApiFactory.ok();
-        } else {
-            return ApiFactory.fail();
         }
+        return ApiFactory.fail();
     }
 }

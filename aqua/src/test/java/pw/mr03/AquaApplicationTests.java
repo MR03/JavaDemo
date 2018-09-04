@@ -1,17 +1,16 @@
-package pw.mr03.oktalia;
+package pw.mr03;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OktaliaApplicationTests {
+public class AquaApplicationTests {
 
 	@Test
 	public void contextLoads() {
-
 	}
 
 }

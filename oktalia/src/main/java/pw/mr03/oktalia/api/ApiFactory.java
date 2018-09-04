@@ -48,6 +48,16 @@ public class ApiFactory {
     }
 
     /**
+     * 失败返回,没有data,msg不同
+     */
+    public static final Api fail(String code, String msg) {
+        api.setCode(code);
+        api.setMsg(msg);
+        api.setData("");
+        return api;
+    }
+
+    /**
      * 设置
      */
     public static final Api set(Code code, Object data) {

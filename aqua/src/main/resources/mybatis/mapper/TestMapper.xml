@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pw.mr03.mapper.TestMapper">
+    <resultMap id="BaseResultMap" type="pw.mr03.entity.Test">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectOrderCellById" parameterType="int" resultMap="BaseResultMap">
+        select
+        id, title
+        from ok_test
+        where id = #{id}
+    </select>
+</mapper>

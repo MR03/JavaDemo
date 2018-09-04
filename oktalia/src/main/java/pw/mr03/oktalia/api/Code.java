@@ -4,8 +4,14 @@ package pw.mr03.oktalia.api;
  * Created by Administrator on 2018/3/23.
  */
 public enum Code {
+    // 成功
     SUCCESS("0000", "操作成功"),
-    FAILURE("1000", "操作失败")
+    // 失败
+    FAILURE("1000", "操作失败"),
+    // 请求
+    PARAMS_LACK("2000", "缺少参数"),
+    // 响应
+    // 其它
     ;
 
 
@@ -43,7 +49,7 @@ public enum Code {
 //    FAILURE_LOGIN_PWDERROR("1007", "FAILURE_LOGIN_PWDERROR", "登录失败,密码错误"),
 //    FAILURE_USER_ADD_EXISTED("1008", "FAILURE_USER_ADD_EXISTED", "添加失败,该用户已经存在"),
 //
-//    PARAMS_LACK("2000", "PARAMS_LACK", "缺少参数"),
+
 //    DB_DATA_ERROR("2001", "DB_DATA_ERROR", "表数据异常"),
 //    DB_OPERATE_FAILURE("2002", "DB_OPERATE_FAILURE", "数据库处理失败"),
 //
