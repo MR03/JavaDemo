@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pw.mr03.mapper.AreaMapper">
+    <insert id="insertAreaCell" parameterType="pw.mr03.entity.Area" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into ok_area (area_name, city_code, province_code, code)
+        values (#{name}, #{cityCode}, #{provinceCode}, #{code})
+    </insert>
+</mapper>
