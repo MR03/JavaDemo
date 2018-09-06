@@ -3,6 +3,7 @@ package pw.mr03.api;
 /**
  * Created by Administrator on 2018/3/23.
  */
+
 public class Api<T> {
     private String code;
     private String msg;

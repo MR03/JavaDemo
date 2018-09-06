@@ -1,11 +1,10 @@
-package pw.mr03.oktalia.exception;
+package pw.mr03.exception;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import pw.mr03.oktalia.api.Api;
-import pw.mr03.oktalia.api.ApiFactory;
-import pw.mr03.oktalia.api.Code;
+import pw.mr03.api.Api;
+import pw.mr03.api.ApiGenerator;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,11 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 @RestControllerAdvice
 public class RequestExceptionHandler {
     @ExceptionHandler(value=MethodArgumentNotValidException.class)
-    public Api MethodArgumentNotValidHandler(HttpServletRequest request, MethodArgumentNotValidException exception)
+    public Api<String> MethodArgumentNotValidHandler(HttpServletRequest request, MethodArgumentNotValidException exception)
     {
         // 按需重新封装需要返回的错误信息
-        String code = Code.PARAMS_LACK.getCode();
         String msg = exception.getBindingResult().getFieldError().getDefaultMessage();
-        return ApiFactory.fail(code, msg);
+        return ApiGenerator.fail(msg);
     }
 }
