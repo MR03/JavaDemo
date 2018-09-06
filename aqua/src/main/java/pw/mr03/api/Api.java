@@ -1,14 +1,16 @@
-package pw.mr03.oktalia.api;
+package pw.mr03.api;
 
 /**
  * Created by Administrator on 2018/3/23.
  */
-public class Api {
+public class Api<T> {
     private String code;
     private String msg;
-    private Object data;
+    private T data;
 
-    public String getCode() { return code; }
+    public String getCode() {
+        return code;
+    }
 
     public void setCode(String code) {
         this.code = code;
@@ -22,11 +24,11 @@ public class Api {
         this.msg = msg;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
