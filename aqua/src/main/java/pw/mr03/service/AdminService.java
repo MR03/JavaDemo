@@ -3,9 +3,7 @@ package pw.mr03.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pw.mr03.entity.Admin;
-import pw.mr03.entity.Area;
 import pw.mr03.mapper.AdminMapper;
-import pw.mr03.mapper.AreaMapper;
 import pw.mr03.utils.Common;
 
 /**
@@ -22,5 +20,10 @@ public class AdminService {
         Admin payload = new Admin(null, admin.getMobile(), admin.getRealName(), admin.getEmail(), Common.md5(admin.getPassword()));
         boolean result = adminMapper.insertAdmin(payload);
         return result;
+    }
+
+    public Admin getAdmin() {
+        Admin admin =  adminMapper.getAdmin();
+        return admin;
     }
 }

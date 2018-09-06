@@ -8,8 +8,11 @@ import javax.validation.constraints.NotBlank;
 public class ReqAdminAdd {
     @NotBlank(message = "电话不能为空")
     private String mobile;
+    @NotBlank(message = "姓名不能为空")
     private String realName;
+    @NotBlank(message = "邮箱不能为空")
     private String email;
+    @NotBlank(message = "密码不能为空")
     private String password;
 
     public String getMobile() {

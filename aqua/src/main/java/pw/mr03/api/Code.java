@@ -7,9 +7,7 @@ public enum Code {
     // 成功
     SUCCESS("0000", "操作成功"),
     // 失败
-    FAILURE("1000", "操作失败"),
-    // 请求
-    PARAMS_LACK("2000", "缺少参数"),
+    FAILURE("1000", "操作失败")
     // 响应
     // 其它
     ;
@@ -26,6 +24,7 @@ public enum Code {
     public String getCode() {
         return code;
     }
+
     public String getMsg() {
         return msg;
     }
@@ -54,6 +53,4 @@ public enum Code {
 //    DB_OPERATE_FAILURE("2002", "DB_OPERATE_FAILURE", "数据库处理失败"),
 //
 //    LOGIN_NOT("3000", "LOGIN_NOT", "该用户没有登录"),
-//    BUILD_NOW("3001", "BUILD_NOW", "接口正在开发")
-//            ;
 }

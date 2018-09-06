@@ -17,7 +17,6 @@ public class AdminTests {
 
 	@Test
     public void test() {
-        Admin admin = new Admin(null, "2123", "23", "23", "23");
-        adminService.addNewAdmin(admin);
+        System.out.println(adminService.getAdmin().getPassword());;
     }
 }

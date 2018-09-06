@@ -15,6 +15,11 @@ public class Admin {
     private String lastLoginIp;
     private Integer isDelete;
 
+    public Admin(Integer id, String mobile) {
+        this.id = id;
+        this.mobile = mobile;
+    }
+
     public Admin(Integer id, String mobile, String realName, String email, String password) {
         this.id = id;
         this.mobile = mobile;

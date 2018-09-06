@@ -10,4 +10,6 @@ import pw.mr03.entity.Admin;
 @Repository
 public interface AdminMapper {
     boolean insertAdmin(Admin admin);
+
+    Admin getAdmin();
 }
