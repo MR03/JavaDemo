@@ -11,8 +11,6 @@ public class Admin {
     private String realName;
     private String email;
     private String password;
-    private Date lastLoginTime;
-    private String lastLoginIp;
     private Integer isDelete;
 
     public Admin(Integer id, String mobile) {
@@ -68,21 +66,6 @@ public class Admin {
         this.password = password;
     }
 
-    public Date getLastLoginTime() {
-        return lastLoginTime;
-    }
-
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
-
-    public String getLastLoginIp() {
-        return lastLoginIp;
-    }
-
-    public void setLastLoginIp(String lastLoginIp) {
-        this.lastLoginIp = lastLoginIp;
-    }
 
     public Integer getIsDelete() {
         return isDelete;

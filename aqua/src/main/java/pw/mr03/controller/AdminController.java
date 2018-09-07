@@ -24,13 +24,11 @@ public class AdminController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Api<String> add(@RequestBody @Validated ReqAdminAdd reqAdminAdd) {
-
         return ApiGenerator.ok();
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     public Api get(HttpSession httpSession) {
-        System.out.println(httpSession.getId());
         return adminLogic.get();
     }
 }

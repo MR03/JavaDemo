@@ -1,7 +1,5 @@
 package pw.mr03.domain.dto;
 
-import java.util.Date;
-
 /**
  * Created by Administrator on 2018/9/5.
  */
@@ -10,8 +8,6 @@ public class GetAdmin {
     private String mobile;
     private String realName;
     private String email;
-    private Date lastLoginTime;
-    private String lastLoginIp;
 
     public GetAdmin(Integer id, String mobile, String realName, String email) {
         this.id = id;
@@ -50,22 +46,6 @@ public class GetAdmin {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Date getLastLoginTime() {
-        return lastLoginTime;
-    }
-
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
-
-    public String getLastLoginIp() {
-        return lastLoginIp;
-    }
-
-    public void setLastLoginIp(String lastLoginIp) {
-        this.lastLoginIp = lastLoginIp;
     }
 }
 

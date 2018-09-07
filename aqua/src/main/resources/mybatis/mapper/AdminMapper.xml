@@ -2,22 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="pw.mr03.mapper.AdminMapper">
+    <!--创建管理员-->
     <insert id="insertAdmin" parameterType="pw.mr03.entity.Admin" useGeneratedKeys="true"
             keyProperty="id">
         insert into ok_admin (mobile, real_name, email, password)
         values (#{mobile}, #{realName}, #{email}, #{password})
     </insert>
-
+    <!--管理员信息-->
     <resultMap id="BaseResultMap" type="pw.mr03.domain.dto.GetAdmin">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="mobile" property="mobile" jdbcType="VARCHAR" />
         <result column="real_name" property="realName" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
     </resultMap>
-    <select id="getAdmin" resultMap="BaseResultMap">
+    <select id="getAdmin" parameterType="String" resultMap="BaseResultMap">
         select
         id, mobile, real_name, email
         from ok_admin
-        where id = 5 and is_delete = 1
+        where mobile = #{mobile} and is_delete = 0
     </select>
 </mapper>
