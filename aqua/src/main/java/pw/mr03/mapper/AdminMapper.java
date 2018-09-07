@@ -1,6 +1,7 @@
 package pw.mr03.mapper;
 
 import org.springframework.stereotype.Repository;
+import pw.mr03.domain.dto.GetAdmin;
 import pw.mr03.entity.Admin;
 
 /**
@@ -11,5 +12,5 @@ import pw.mr03.entity.Admin;
 public interface AdminMapper {
     boolean insertAdmin(Admin admin);
 
-    Admin getAdmin();
+    GetAdmin getAdmin();
 }

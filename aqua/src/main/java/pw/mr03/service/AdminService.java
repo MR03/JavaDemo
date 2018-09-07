@@ -1,7 +1,9 @@
 package pw.mr03.service;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pw.mr03.domain.dto.GetAdmin;
 import pw.mr03.entity.Admin;
 import pw.mr03.mapper.AdminMapper;
 import pw.mr03.utils.Common;
@@ -22,8 +24,8 @@ public class AdminService {
         return result;
     }
 
-    public Admin getAdmin() {
-        Admin admin =  adminMapper.getAdmin();
+    public GetAdmin getAdmin() {
+        GetAdmin admin = adminMapper.getAdmin();
         return admin;
     }
 }

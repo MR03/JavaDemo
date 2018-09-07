@@ -32,7 +32,6 @@ public class AreaTests {
             ArrayList<Area> areas = JSON.parseObject(jsonDataStr, new TypeReference<ArrayList<Area>>() {});
             for (Area area : areas) {
                 boolean i = areaService.insertAreaCell(area);
-                System.out.println(i);
             }
         } catch (IOException e) {
             e.printStackTrace();

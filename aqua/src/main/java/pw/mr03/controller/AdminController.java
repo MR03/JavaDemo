@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.*;
 import pw.mr03.api.Api;
 import pw.mr03.api.ApiGenerator;
 import pw.mr03.domain.request.ReqAdminAdd;
-import pw.mr03.entity.Admin;
-import pw.mr03.service.AdminService;
+import pw.mr03.logic.AdminLogic;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
 
-//    @Autowired
-//    private AdminService adminService;
+    @Autowired
+    private AdminLogic adminLogic;
 
     @RequestMapping("/")
     public String index() {
@@ -26,8 +25,8 @@ public class AdminController {
         return ApiGenerator.ok();
     }
 
-//    @RequestMapping(value = "/get", method = RequestMethod.GET)
-//    public Api<Admin> get() {
-////        return ApiGenerator.ok(adminService.getAdmin());
-//    }
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public Api get() {
+        return adminLogic.get();
+    }
 }

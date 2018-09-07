@@ -32,7 +32,6 @@ public class CityTests {
             ArrayList<City> cities = JSON.parseObject(jsonDataStr, new TypeReference<ArrayList<City>>() {});
             for (City city : cities) {
                 boolean i = cityService.insertCityCell(city);
-                System.out.println(city.getName());
             }
         } catch (IOException e) {
             e.printStackTrace();

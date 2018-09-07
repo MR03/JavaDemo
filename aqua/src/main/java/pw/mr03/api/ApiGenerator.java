@@ -6,7 +6,6 @@ package pw.mr03.api;
 public class ApiGenerator {
 
     public static final  <T> Api<T> gen(String code, String msg, T data) {
-        System.out.println("123");
         Api<T> api = new Api<T>();
         api.setCode(code);
         api.setMsg(msg);

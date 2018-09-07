@@ -8,18 +8,16 @@
         values (#{mobile}, #{realName}, #{email}, #{password})
     </insert>
 
-    <resultMap id="BaseResultMap" type="pw.mr03.entity.Admin">
+    <resultMap id="BaseResultMap" type="pw.mr03.domain.dto.GetAdmin">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="mobile" property="mobile" jdbcType="VARCHAR" />
-        <result column="real_name" property="real_name" jdbcType="VARCHAR" />
+        <result column="real_name" property="realName" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="last_login_time" property="last_login_time" jdbcType="VARCHAR" />
-        <result column="last_login_ip" property="last_login_ip" jdbcType="VARCHAR" />
     </resultMap>
     <select id="getAdmin" resultMap="BaseResultMap">
         select
         id, mobile, real_name, email
         from ok_admin
-        where id = 5 and is_delete = 0
+        where id = 5 and is_delete = 1
     </select>
 </mapper>
