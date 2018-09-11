@@ -3,9 +3,9 @@ package com.silvertb.design;
 import java.util.List;
 
 public interface BasicMapper<T> {
-    public int save(T domain); // 单个保存
-
     public T findByPK(Integer id); // 根据主键查找
+
+    public Integer save(T domain); // 单个保存
 
     public int saveBatch(List list);
 

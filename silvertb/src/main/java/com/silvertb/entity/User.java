@@ -1,4 +1,5 @@
 package com.silvertb.entity;
+import java.sql.Timestamp;
 
 public class User {
     Integer id;
@@ -6,12 +7,17 @@ public class User {
     String password;
     String phone;
     String email;
-    String created;
-    String updated;
+    Timestamp created;
+    Timestamp updated;
 
-    public User(Integer id, String username) {
+    public User(Integer id, String username, String password, String phone, String email, Timestamp created, Timestamp updated) {
         this.id = id;
         this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.created = created;
+        this.updated = updated;
     }
 
     public Integer getId() {
@@ -54,19 +60,19 @@ public class User {
         this.email = email;
     }
 
-    public String getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
-    public String getUpdated() {
+    public Timestamp getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(Timestamp updated) {
         this.updated = updated;
     }
 }
