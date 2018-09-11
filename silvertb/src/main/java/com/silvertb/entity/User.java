@@ -10,6 +10,9 @@ public class User {
     Timestamp created;
     Timestamp updated;
 
+    public User() {
+    }
+
     public User(Integer id, String username, String password, String phone, String email, Timestamp created, Timestamp updated) {
         this.id = id;
         this.username = username;

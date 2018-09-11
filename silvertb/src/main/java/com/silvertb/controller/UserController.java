@@ -6,6 +6,7 @@ import com.silvertb.constant.CommonConstant;
 import com.silvertb.domain.request.RequestUserSave;
 import com.silvertb.domain.request.RequestUserSaveBatch;
 import com.silvertb.entity.User;
+import com.silvertb.logic.UserLogic;
 import com.silvertb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -31,7 +32,7 @@ public class UserController {
 
     @PostMapping("/save")
     public Api<String> save(@RequestBody @Validated RequestUserSave req) {
-        System.out.println(req.getPhone());
+        System.out.println(UserLogic.RequestToUserSave(req).getUsername());
         return ApiGenerator.ok();
     }
 
