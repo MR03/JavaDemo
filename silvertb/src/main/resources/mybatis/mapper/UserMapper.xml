@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.silvertb.mapper.UserMapper">
-    <!--用户信息-->
+    <!-- 根据主键用户信息 -->
     <resultMap id="BaseResultMap" type="com.silvertb.entity.User">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="username" property="username" jdbcType="VARCHAR" />
@@ -13,4 +13,11 @@
         from tb_user
         where id = #{id}
     </select>
+    <!--创建用户-->
+    <insert id="save" parameterType="com.silvertb.entity.User" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into tb_user (username, password, phone, email)
+        values (#{mobile}, #{realName}, #{email}, #{password})
+    </insert>
+
 </mapper>
