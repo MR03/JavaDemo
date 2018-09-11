@@ -14,4 +14,9 @@ public class UserService {
         User user = userMapper.findByPK(id);
         return user;
     }
+
+    public boolean saveUser(User user) {
+        userMapper.save(user);
+        return true;
+    }
 }

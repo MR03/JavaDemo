@@ -16,8 +16,8 @@
     <!--创建用户-->
     <insert id="save" parameterType="com.silvertb.entity.User" useGeneratedKeys="true"
             keyProperty="id">
-        insert into tb_user (username, password, phone, email)
-        values (#{mobile}, #{realName}, #{email}, #{password})
+        insert into tb_user (username, password, phone, email, created, updated)
+        values (#{username}, #{password}, #{phone}, #{email}, #{created}, #{updated})
     </insert>
 
 </mapper>

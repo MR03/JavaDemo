@@ -1,4 +1,4 @@
-package com.silvertb.silvertb.mapper;
+package com.silvertb.service;
 
 import com.silvertb.mapper.UserMapper;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserMapperTests {
+public class UserServiceTests {
 
     @Autowired
     private UserMapper userMapper;
