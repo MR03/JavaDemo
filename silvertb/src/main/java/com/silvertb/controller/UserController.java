@@ -32,7 +32,8 @@ public class UserController {
 
     @PostMapping("/save")
     public Api<String> save(@RequestBody @Validated RequestUserSave req) {
-        System.out.println(UserLogic.RequestToUserSave(req).getUsername());
+        User user = UserLogic.RequestToUserSave(req);
+        userService.saveUser(user);
         return ApiGenerator.ok();
     }
 
