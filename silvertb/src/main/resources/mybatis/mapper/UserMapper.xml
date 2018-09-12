@@ -2,19 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.silvertb.mapper.UserMapper">
+    <!-- 根据手机号和邮箱用户信息 -->
+    <resultMap id="findByMobileOrEmailResultMap" type="User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="findByMobileOrEmail" parameterType="User" resultMap="findByMobileOrEmailResultMap">
+        select
+        id
+        from tb_user
+        where phone = #{phone} or email = #{email}
+    </select>
     <!-- 根据主键用户信息 -->
-    <resultMap id="BaseResultMap" type="com.silvertb.entity.User">
+    <resultMap id="findByPKResultMap" type="User">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="username" property="username" jdbcType="VARCHAR" />
     </resultMap>
-    <select id="findByPK" parameterType="INTEGER" resultMap="BaseResultMap">
+    <select id="findByPK" parameterType="INTEGER" resultMap="findByPKResultMap">
         select
         id, username
         from tb_user
         where id = #{id}
     </select>
     <!--创建用户-->
-    <insert id="save" parameterType="com.silvertb.entity.User" useGeneratedKeys="true"
+    <insert id="save" parameterType="User" useGeneratedKeys="true"
             keyProperty="id">
         insert into tb_user (username, password, phone, email, created, updated)
         values (#{username}, #{password}, #{phone}, #{email}, #{created}, #{updated})

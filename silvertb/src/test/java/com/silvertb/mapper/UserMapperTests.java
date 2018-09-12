@@ -12,6 +12,7 @@ import sun.security.provider.MD5;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 
 @RunWith(SpringRunner.class)
@@ -22,12 +23,18 @@ public class UserMapperTests {
     private UserMapper userMapper;
 
     @Test
-    public void testFindByPK() {
+    public void findByMobileOrEmailTest() {
+        List<User> users = userMapper.findByMobileOrEmail(new User("134888888828", "sdfsdfsdfs"));
+        System.out.println(users.size());
+    }
+
+    @Test
+    public void findByPKTest() {
         System.out.println(userMapper.findByPK(18).getUsername());
     }
 
     @Test
-    public void testSave() {
+    public void saveTest() {
         User user = new User(null, "test2", Common.toMD5("sdfsdf"), "1500526845", "fws1ef@qq.com", Time.dateToTimestamp(), Time.dateToTimestamp());
         userMapper.save(user);
         System.out.println(user.getId());

@@ -1,6 +1,9 @@
 package com.silvertb.entity;
+import org.apache.ibatis.type.Alias;
+
 import java.sql.Timestamp;
 
+@Alias("User")
 public class User {
     Integer id;
     String username;
@@ -11,6 +14,11 @@ public class User {
     Timestamp updated;
 
     public User() {
+    }
+
+    public User(String phone, String email) {
+        this.phone = phone;
+        this.email = email;
     }
 
     public User(Integer id, String username, String password, String phone, String email, Timestamp created, Timestamp updated) {

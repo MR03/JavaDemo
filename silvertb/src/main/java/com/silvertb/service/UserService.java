@@ -2,8 +2,12 @@ package com.silvertb.service;
 
 import com.silvertb.entity.User;
 import com.silvertb.mapper.UserMapper;
+import com.silvertb.utils.Common;
+import com.silvertb.utils.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.rmi.runtime.Log;
+import sun.security.provider.MD5;
 
 @Service
 public class UserService {
@@ -15,8 +19,23 @@ public class UserService {
         return user;
     }
 
-    public boolean saveUser(User user) {
-        userMapper.save(user);
-        return true;
+    public Integer saveUser(User user) {
+        // 检查是否已存在同手机号和邮箱的用户
+        User userOld = new User(user.getPhone(), user.getEmail());
+        // 没有就添加
+        if (userMapper.findByMobileOrEmail(userOld).size() == 0) {
+            user.setId(null);
+            user.setPassword(Common.toMD5(user.getPassword()));
+            user.setCreated(Time.dateToTimestamp());
+            user.setUpdated(Time.dateToTimestamp());
+            try {
+                userMapper.save(user);
+                return user.getId();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return -2;
+            }
+        }
+        return -1;
     }
 }
