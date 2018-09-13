@@ -1,6 +1,7 @@
 package com.silvertb.controller;
 
 import com.silvertb.api.Api;
+import com.silvertb.api.ApiGenerator;
 import com.silvertb.constant.CommonConstant;
 import com.silvertb.domain.request.RequestUserSave;
 import com.silvertb.domain.request.RequestUserSaveBatch;
@@ -17,9 +18,9 @@ public class UserController {
     @Autowired
     UserLogic userLogic;
 
-    @RequestMapping("/")
-    public String index() {
-        return "user api running";
+    @RequestMapping("")
+    public Api<String> index() {
+        return ApiGenerator.ok("user api running");
     }
 
     @GetMapping("/find")

@@ -7,7 +7,9 @@ public enum Code {
     // 成功
     SUCCESS("0000", "操作成功"),
     // 失败
-    FAILURE("1000", "操作失败")
+    FAILURE("1000", "操作失败"),
+    FAILURE_DB_ACTION("1000", "数据库写入错误"),
+    FAILURE_HAS_USER("1000", "该手机或邮箱已被注册")
     // 其它
     ;
 
