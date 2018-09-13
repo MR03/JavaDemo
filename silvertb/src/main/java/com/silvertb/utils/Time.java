@@ -1,9 +1,10 @@
 package com.silvertb.utils;
 
-import org.springframework.util.DigestUtils;
-
+import org.springframework.util.StringUtils;
 
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -17,5 +18,10 @@ public class Time {
     public static Timestamp dateToTimestamp() {
         Date date = new Date();
         return new Timestamp(date.getTime());
+    }
+
+    public static String timestampSecond() {
+        long epochSecond = Instant.now().getEpochSecond();
+        return String.valueOf(epochSecond);
     }
 }
