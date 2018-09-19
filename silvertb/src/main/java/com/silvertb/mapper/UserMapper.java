@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface UserMapper extends BasicMapper<User> {
     //
-    public List<User> findByMobileOrEmail(User user); // 根据主键查找
+    public List<User> findByMobileOrEmail(User user); // 根据手机和邮箱
 }

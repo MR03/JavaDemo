@@ -9,7 +9,7 @@ public class CheckSumBuilder {
     }
 
     // 计算并获取md5值
-    public static String getMD5(String requestBody) {
+    private static String getMD5(String requestBody) {
         return encode("MD5", requestBody);
     }
 

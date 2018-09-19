@@ -1,10 +1,11 @@
 package com.silvertb.entity;
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Alias("User")
-public class User {
+public class User implements Serializable {
     Integer id;
     String username;
     String password;
